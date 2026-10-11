@@ -6,7 +6,7 @@
 /*   By: sgomec <sgomec@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/11 20:32:23 by sgomec            #+#    #+#             */
-/*   Updated: 2026/10/11 20:39:31 by sgomec           ###   ########.fr       */
+/*   Updated: 2026/10/11 20:43:16 by sgomec           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 #include <unistd.h>
 #include <stdlib.h>
+
+typedef struct s_stack
+{
+    int             content;
+    int             index;
+    struct s_stack  *next;
+}	t_stack;
 
 char    **ft_split(char const *s, char sep);
 void	pb(t_stack **a, t_stack **b);
@@ -35,12 +42,9 @@ void	free_split(char **arr);
 void	error_exit(t_stack **stack, char **split);
 void	add_number(t_stack **stack, char *word, char **split);
 t_stack	*parse_args(int argc, char **argv);
-
-typedef struct s_stack
-{
-    int             content;
-    int             index;
-    struct s_stack  *next;
-}	t_stack;
+t_stack	*lst_new(int content);
+void	add_back(t_stack **stack, t_stack *node);
+int	stack_size(t_stack *stack);
+void	free_stack(t_stack **stack);
 
 #endif
