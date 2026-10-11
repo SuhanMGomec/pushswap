@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgomec <sgomec@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gucakmak <gucakmak@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/03 12:40:38 by sgomec            #+#    #+#             */
-/*   Updated: 2026/10/03 13:10:48 by sgomec           ###   ########.fr       */
+/*   Updated: 2026/10/11 16:52:37 by gucakmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ typedef struct s_stack
 {
     int             content;
     int             index;
-    int             pos;
     struct s_stack  *next;
-    struct s_stack  *prev;
 }	t_stack;
 
 #endif
