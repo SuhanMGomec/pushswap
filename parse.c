@@ -1,56 +1,45 @@
 #include "push_swap.h"
-#include <stdio.h>
-int	is_valid_number(char *s)
-{
-	int	i;
 
-	if (!s || !s[0])
-		return (0);
-    i = 0;
-	if ((s[i] == '+' || s[i] == '-') && s[i + 1])
-		i++;
-	while (s[i])
-	{
-		if (!(s[i] <= '9' && s[i] >= '0'))
-			return (0);
-		i++; 
-	}
-	return (1);
+void	add_number(t_stack **stack, char *word, char **split)
+{
+	long		n;
+	t_stack	*new;
+
+	if (!is_valid_number(word))
+		error_exit(stack, split);
+	n = ft_atol(word);
+	if (n > 2147483647 || n < -2147483648)
+		error_exit(stack, split);
+	if (has_duplicate(*stack, n))
+		error_exit(stack, split);
+	new = lst_new(n);
+	if (!new)
+		error_exit(stack, split);
+	add_back(stack, new);
 }
 
-long	ft_atol(const char *s)
+t_stack	*parse_args(int argc, char **argv)
 {
-	long	res;
-	int	i;
-	int	sign;
+	t_stack	*stack;
+	char	**split;
+	int		i;
+	int		j;
 
-	res = 0;
-	i = 0;
-	sign = 1;
-
-	if (s[i] == '+' || s[i] == '-')
+	stack = NULL;
+	i = 1;
+	while (i < argc)
 	{
-		if (s[i] == '-')
-			sign *= -1;
+		j = 0;
+		split = ft_split(argv[i], ' ');
+		if (!split)
+			error_exit(&stack, NULL);
+		if (!split[0])
+			error_exit(&stack, split);
+		while (split[j])
+			add_number(&stack, split[j++], split);
+		free_split(split);
 		i++;
 	}
-	while (s[i])
-	{
-		res = res * 10 + (s[i] - '0');
-		i++;
-		if (res > 2147483648)
-			return (2147483648);
-	}
-	return (res * sign);
+	return (stack);
 }
 
-int	has_duplicate(t_stack *a, int n)
-{
-	while (a)
-	{
-		if (a->content == n)
-			return (1);
-		a = a->next;		
-	}
-	return (0);
-}
