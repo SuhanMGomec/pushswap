@@ -6,7 +6,7 @@
 /*   By: sgomec <sgomec@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 14:08:21 by sgomec            #+#    #+#             */
-/*   Updated: 2026/10/17 14:58:12 by sgomec           ###   ########.fr       */
+/*   Updated: 2026/10/17 15:04:08 by sgomec           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static int	find_max_index(t_stack *a)
 	}
 	return (max);
 }
+
 void	sort_2(t_stack **a)
 {
 	if ((*a)->index > (*a)->next->index)
