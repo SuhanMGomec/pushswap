@@ -6,7 +6,7 @@
 /*   By: sgomec <sgomec@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/11 20:32:23 by sgomec            #+#    #+#             */
-/*   Updated: 2026/10/11 20:43:16 by sgomec           ###   ########.fr       */
+/*   Updated: 2026/10/17 15:00:45 by sgomec           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,11 @@ t_stack	*lst_new(int content);
 void	add_back(t_stack **stack, t_stack *node);
 int	stack_size(t_stack *stack);
 void	free_stack(t_stack **stack);
+int	is_sorted(t_stack *stack);
+void	assign_index(t_stack *stack);
+double	disorder(t_stack *stack);
+void	sort_2(t_stack **a);
+void	sort_3(t_stack **a);
+void	sort_5(t_stack **a);
 
 #endif
