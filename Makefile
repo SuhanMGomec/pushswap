@@ -2,8 +2,11 @@ NAME	= push_swap
 
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
+RM		= rm -f
 
-SRCS	= ft_split.c \
+SRCS	= main.c \
+		  bench.c \
+		  ft_split.c \
 		  parse.c \
 		  parse_utils.c \
 		  stack_utils.c \
@@ -12,26 +15,26 @@ SRCS	= ft_split.c \
 		  op_rotate.c \
 		  op_swap.c \
 		  sort_simple.c \
-		  sort_utils.c \
-		  bench.c \
 		  sort_medium.c \
-		  sort_complex.c 
+		  sort_complex.c \
+		  sort_utils.c
 
 OBJS	= $(SRCS:.c=.o)
 
+HEADER	= push_swap.h
+
 all: $(NAME)
+
+$(OBJS): $(HEADER)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.c push_swap.h
-	$(CC) $(CFLAGS) -c $< -o $@
-
 clean:
-	rm -f $(OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
