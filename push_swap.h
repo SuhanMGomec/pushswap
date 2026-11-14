@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgomec <sgomec@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sgomec <sgomec@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/11 20:32:23 by gucakmak          #+#    #+#             */
-/*   Updated: 2026/11/14 21:19:54 by sgomec           ###   ########.fr       */
+/*   Updated: 2026/11/14 21:30:31 by sgomec           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_stack
 typedef struct s_counter
 {
 	int	sa;
-	int ra;
+	int	ra;
 	int	rra;
 	int	pa;
 	int	pb;

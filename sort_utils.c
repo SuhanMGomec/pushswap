@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gucakmak@student.42istanbul.com.tr         +#+  +:+       +#+        */
+/*   By: sgomec <sgomec@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 11:59:06 by gucakmak          #+#    #+#             */
-/*   Updated: 2026/11/14 19:43:39 by gucakmak         ###   ########.fr       */
+/*   Updated: 2026/11/14 21:26:24 by sgomec           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ double	disorder(t_stack *stack)
 	t_stack	*lst;
 	int		inv;
 	int		n;
-	int	pairs;
+	int		pairs;
 
 	inv = 0;
 	n = 0;
@@ -71,6 +71,7 @@ double	disorder(t_stack *stack)
 	pairs = n * (n - 1) / 2.0;
 	return ((double) inv / pairs);
 }
+
 int	find_max_index(t_stack *a)
 {
 	int	max;
@@ -97,4 +98,3 @@ int	find_pos(t_stack *a, int index)
 	}
 	return (pos);
 }
-

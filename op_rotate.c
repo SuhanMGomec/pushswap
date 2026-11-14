@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   op_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gucakmak@student.42istanbul.com.tr         +#+  +:+       +#+        */
+/*   By: sgomec <sgomec@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/03 13:11:01 by sgomec            #+#    #+#             */
-/*   Updated: 2026/11/14 12:02:49 by gucakmak         ###   ########.fr       */
+/*   Updated: 2026/11/14 21:28:15 by sgomec           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void rotate(t_stack **stack)
+static	void	rotate(t_stack **stack)
 {
 	t_stack	*temp;
 	t_stack	*lst;
 	t_stack	*new_lst;
-	
+
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
 	temp = *stack;
@@ -35,7 +35,6 @@ void	ra(t_stack **a, t_ctr *ctr)
 	rotate(a);
 	write (1, "ra\n", 3);
 	ctr->ra++;
-	
 }
 
 void	rb(t_stack **b, t_ctr *ctr)
