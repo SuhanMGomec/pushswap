@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   parse_utils.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sgomec <sgomec@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/11 20:32:37 by sgomec            #+#    #+#             */
-/*   Updated: 2026/10/11 20:32:39 by sgomec           ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   parse_utils.c                                     :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: gucakmak <gucakmak@student.42istanbul.com.#+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/11 20:32:37 by gucakmak         #+#    #+#              */
+/*   Updated: 2026/11/11 15:23:48 by gucakmak        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ int	is_valid_number(char *s)
 
 	if (!s || !s[0])
 		return (0);
-    i = 0;
+	i = 0;
 	if ((s[i] == '+' || s[i] == '-') && s[i + 1])
 		i++;
 	while (s[i])
 	{
 		if (!(s[i] <= '9' && s[i] >= '0'))
 			return (0);
-		i++; 
+		i++;
 	}
 	return (1);
 }
@@ -33,13 +33,12 @@ int	is_valid_number(char *s)
 long	ft_atol(const char *s)
 {
 	long	res;
-	int	i;
-	int	sign;
+	int		i;
+	int		sign;
 
 	res = 0;
 	i = 0;
 	sign = 1;
-
 	if (s[i] == '+' || s[i] == '-')
 	{
 		if (s[i] == '-')
@@ -62,7 +61,7 @@ int	has_duplicate(t_stack *a, int n)
 	{
 		if (a->content == n)
 			return (1);
-		a = a->next;		
+		a = a->next;
 	}
 	return (0);
 }
@@ -81,10 +80,11 @@ void	free_split(char **arr)
 	}
 	free(arr);
 }
+
 void	error_exit(t_stack **stack, char **split)
 {
 	free_split(split);
 	free_stack(stack);
-	write (2, "Error\n", 6);
-	exit (1);
+	write(2, "Error\n", 6);
+	exit(1);
 }

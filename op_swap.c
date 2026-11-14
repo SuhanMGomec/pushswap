@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   op_swap.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sgomec <sgomec@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/03 13:11:04 by sgomec            #+#    #+#             */
-/*   Updated: 2026/10/03 14:01:56 by sgomec           ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   op_swap.c                                         :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: gucakmak <gucakmak@student.42istanbul.com.#+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/03 13:11:04 by gucakmak         #+#    #+#              */
+/*   Updated: 2026/11/11 15:23:56 by gucakmak        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static	void	swap(t_stack **stack)
+static void	swap(t_stack **stack)
 {
-	t_stack *lst;
-	t_stack *temp;
-	
+	t_stack	*lst;
+	t_stack	*temp;
+
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
 	lst = *stack;
@@ -25,16 +25,17 @@ static	void	swap(t_stack **stack)
 	temp->next = lst;
 	*stack = temp;
 }
-void    sa(t_stack **a)
+
+void	sa(t_stack **a)
 {
 	swap(a);
 	write(1, "sa\n", 3);
 }
 
-void    sb(t_stack **b)
+void	sb(t_stack **b)
 {
 	swap(b);
-	write(1, "sb\n", 3);	
+	write(1, "sb\n", 3);
 }
 
 void	ss(t_stack **a, t_stack **b)

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sgomec <sgomec@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/11 20:32:51 by sgomec            #+#    #+#             */
-/*   Updated: 2026/10/11 20:32:54 by sgomec           ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   ft_split.c                                        :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: gucakmak <gucakmak@student.42istanbul.com.#+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/11 20:32:51 by gucakmak         #+#    #+#              */
+/*   Updated: 2026/11/11 15:24:11 by gucakmak        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static size_t	ft_wordcount(char const *s, char sep)
 {
-	size_t		count;
-	size_t		word;
+	size_t	count;
+	size_t	word;
 
 	word = 0;
 	count = 0;
@@ -35,7 +35,7 @@ static size_t	ft_wordcount(char const *s, char sep)
 
 static char	**ft_double_free(char **str)
 {
-	size_t		i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
@@ -49,8 +49,8 @@ static char	**ft_double_free(char **str)
 
 static char	*ft_word_dup(char const *s, size_t start, size_t len)
 {
-	char		*word;
-	size_t		i;
+	char	*word;
+	size_t	i;
 
 	word = malloc(len + 1);
 	if (!word)
@@ -88,8 +88,8 @@ static char	**ft_fill(char const *s, char sep, char **res, size_t *i)
 
 char	**ft_split(char const *s, char sep)
 {
-	char		**res;
-	size_t		i[3];
+	char	**res;
+	size_t	i[3];
 
 	if (!s)
 		return (NULL);

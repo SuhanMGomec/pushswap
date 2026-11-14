@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   parse.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sgomec <sgomec@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/11 20:32:31 by sgomec            #+#    #+#             */
-/*   Updated: 2026/10/11 20:32:33 by sgomec           ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   parse.c                                           :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: gucakmak <gucakmak@student.42istanbul.com.#+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/11 20:32:31 by gucakmak         #+#    #+#              */
+/*   Updated: 2026/11/11 15:26:49 by gucakmak        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	add_number(t_stack **stack, char *word, char **split)
 {
-	long		n;
+	long	n;
 	t_stack	*new;
 
 	if (!is_valid_number(word))
@@ -54,4 +54,3 @@ t_stack	*parse_args(int argc, char **argv)
 	}
 	return (stack);
 }
-

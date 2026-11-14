@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   stack_utils.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sgomec <sgomec@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/11 20:32:00 by sgomec            #+#    #+#             */
-/*   Updated: 2026/10/11 20:32:03 by sgomec           ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   stack_utils.c                                     :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: gucakmak <gucakmak@student.42istanbul.com.#+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/11 20:32:00 by gucakmak         #+#    #+#              */
+/*   Updated: 2026/11/11 15:24:13 by gucakmak        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_stack	*lst_new(int content)
 
 void	add_back(t_stack **stack, t_stack *node)
 {
-	t_stack *last;
+	t_stack	*last;
 
 	if (!stack || !node)
 		return ;
