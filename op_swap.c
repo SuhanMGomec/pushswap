@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   op_swap.c                                         :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: gucakmak <gucakmak@student.42istanbul.com.#+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/03 13:11:04 by gucakmak         #+#    #+#              */
-/*   Updated: 2026/11/11 15:23:56 by gucakmak        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   op_swap.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gucakmak@student.42istanbul.com.tr         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/03 13:11:04 by gucakmak          #+#    #+#             */
+/*   Updated: 2026/11/14 12:03:29 by gucakmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,24 @@ static void	swap(t_stack **stack)
 	*stack = temp;
 }
 
-void	sa(t_stack **a)
+void	sa(t_stack **a, t_ctr *ctr)
 {
 	swap(a);
 	write(1, "sa\n", 3);
+	ctr->sa++;
 }
 
-void	sb(t_stack **b)
+void	sb(t_stack **b, t_ctr *ctr)
 {
 	swap(b);
 	write(1, "sb\n", 3);
+	ctr->sb++;
 }
 
-void	ss(t_stack **a, t_stack **b)
+void	ss(t_stack **a, t_stack **b, t_ctr *ctr)
 {
 	swap(a);
 	swap(b);
 	write(1, "ss\n", 3);
+	ctr->ss++;
 }

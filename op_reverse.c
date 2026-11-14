@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   op_reverse.c                                      :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: gucakmak <gucakmak@student.42istanbul.com.#+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/03 13:10:59 by gucakmak         #+#    #+#              */
-/*   Updated: 2026/11/11 15:26:06 by gucakmak        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   op_reverse.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gucakmak@student.42istanbul.com.tr         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/03 13:10:59 by gucakmak          #+#    #+#             */
+/*   Updated: 2026/11/14 12:02:25 by gucakmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,24 @@ static void	reverse(t_stack **stack)
 	*stack = temp;
 }
 
-void	rra(t_stack **a)
+void	rra(t_stack **a, t_ctr *ctr)
 {
 	reverse(a);
 	write(1, "rra\n", 4);
+	ctr->rra++;
 }
 
-void	rrb(t_stack **b)
+void	rrb(t_stack **b, t_ctr *ctr)
 {
 	reverse(b);
 	write(1, "rrb\n", 4);
+	ctr->rrb++;
 }
 
-void	rrr(t_stack **a, t_stack **b)
+void	rrr(t_stack **a, t_stack **b, t_ctr *ctr)
 {
 	reverse(a);
 	reverse(b);
 	write(1, "rrr\n", 4);
+	ct->rrr++;
 }

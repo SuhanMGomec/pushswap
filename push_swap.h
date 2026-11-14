@@ -6,7 +6,7 @@
 /*   By: gucakmak@student.42istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/11 20:32:23 by gucakmak          #+#    #+#             */
-/*   Updated: 2026/11/14 11:41:41 by gucakmak         ###   ########.fr       */
+/*   Updated: 2026/11/14 12:23:40 by gucakmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,20 @@ typedef struct s_counter
 	int	rr;
 	int	rrr;
 }	t_ctr;
+
+void	init_counter(t_ctr	*ctr);
 char	**ft_split(char const *s, char sep);
-void	pb(t_stack **a, t_stack **b);
-void	pa(t_stack **a, t_stack **b);
-void	rra(t_stack **a);
-void	rrb(t_stack **b);
-void	rrr(t_stack **a, t_stack **b);
-void	ra(t_stack **a);
-void	rb(t_stack **b);
-void	rr(t_stack **a, t_stack **b);
-void	sa(t_stack **a);
-void	sb(t_stack **b);
-void	ss(t_stack **a, t_stack **b);
+void	pb(t_stack **a, t_stack **b, t_ctr *ctr);
+void	pa(t_stack **a, t_stack **b, t_ctr *ctr);
+void	rra(t_stack **a, t_ctr *ctr);
+void	rrb(t_stack **b, t_ctr *ctr);
+void	rrr(t_stack **a, t_stack **b, t_ctr *ctr);
+void	ra(t_stack **a, t_ctr *ctr);
+void	rb(t_stack **b, t_ctr *ctr);
+void	rr(t_stack **a, t_stack **b, t_ctr *ctr);
+void	sa(t_stack **a, t_ctr *ctr);
+void	sb(t_stack **b, t_ctr *ctr);
+void	ss(t_stack **a, t_stack **b, t_ctr *ctr);
 int		is_valid_number(char *s);
 long	ft_atol(const char *s);
 int		has_duplicate(t_stack *a, int n);
@@ -66,5 +68,10 @@ double	disorder(t_stack *stack);
 void	sort_2(t_stack **a);
 void	sort_3(t_stack **a);
 void	sort_5(t_stack **a);
+void	sort_simple(t_stack **a, t_ctr *ctr);
+void	sort_medium(t_stack **a, t_ctr *ctr);
+void	sort_complex(t_stack **a, t_ctr *ctr);
+int		find_max_index(t_stack *a);
+int		find_pos(t_stack *a, int index);
 
 #endif
