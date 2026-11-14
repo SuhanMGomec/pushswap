@@ -6,19 +6,19 @@
 /*   By: gucakmak@student.42istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 14:08:21 by gucakmak          #+#    #+#             */
-/*   Updated: 2026/11/14 19:28:59 by gucakmak         ###   ########.fr       */
+/*   Updated: 2026/11/14 19:38:24 by gucakmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_2(t_stack **a, t_ctr *ctr)
+static void	sort_2(t_stack **a, t_ctr *ctr)
 {
 	if ((*a)->index > (*a)->next->index)
 		sa(a, ctr);
 }
 
-void	sort_3(t_stack **a, t_ctr *ctr)
+static void	sort_3(t_stack **a, t_ctr *ctr)
 {
 	int	max;
 
@@ -31,7 +31,7 @@ void	sort_3(t_stack **a, t_ctr *ctr)
 		sa(a, ctr);
 }
 
-void	sort_more_4(t_stack **a, t_ctr *ctr)
+static void	sort_more_4(t_stack **a, t_ctr *ctr)
 {
 	t_stack	*b;
 	int		i;
