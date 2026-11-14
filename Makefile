@@ -3,8 +3,7 @@ NAME	= push_swap
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 
-SRCS	= main.c \
-		  ft_split.c \
+SRCS	= ft_split.c \
 		  parse.c \
 		  parse_utils.c \
 		  stack_utils.c \
@@ -12,8 +11,11 @@ SRCS	= main.c \
 		  op_reverse.c \
 		  op_rotate.c \
 		  op_swap.c \
-		  sort_small.c \
-		  sort_utils.c
+		  sort_simple.c \
+		  sort_utils.c \
+		  bench.c \
+		  sort_medium.c \
+		  sort_complex.c 
 
 OBJS	= $(SRCS:.c=.o)
 

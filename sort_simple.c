@@ -6,7 +6,7 @@
 /*   By: gucakmak@student.42istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 14:08:21 by gucakmak          #+#    #+#             */
-/*   Updated: 2026/11/14 19:38:24 by gucakmak         ###   ########.fr       */
+/*   Updated: 2026/11/14 22:43:35 by gucakmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,15 @@ static void	sort_more_4(t_stack **a, t_ctr *ctr)
 	while (i < size - 3)
 	{
 		if (find_pos(*a, i) <= (stack_size(*a) / 2))
+		{
 			while ((*a)->index != i)
 				ra(a, ctr);
+		}
 		else
+		{
 			while ((*a)->index != i)
-				rra(a, ctr);
+			rra(a, ctr);
+		}
 		pb(a, &b, ctr);
 		i++;
 	}

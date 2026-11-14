@@ -6,7 +6,7 @@
 /*   By: gucakmak@student.42istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/03 13:10:59 by gucakmak          #+#    #+#             */
-/*   Updated: 2026/11/14 12:02:25 by gucakmak         ###   ########.fr       */
+/*   Updated: 2026/11/14 22:05:50 by gucakmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	reverse(t_stack **stack)
 {
 	t_stack	*temp;
-	t_stack	*stack;
+	t_stack	*lst;
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
@@ -47,5 +47,5 @@ void	rrr(t_stack **a, t_stack **b, t_ctr *ctr)
 	reverse(a);
 	reverse(b);
 	write(1, "rrr\n", 4);
-	ct->rrr++;
+	ctr->rrr++;
 }

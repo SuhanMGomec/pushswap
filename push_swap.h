@@ -6,7 +6,7 @@
 /*   By: gucakmak@student.42istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/11 20:32:23 by gucakmak          #+#    #+#             */
-/*   Updated: 2026/11/14 19:43:14 by gucakmak         ###   ########.fr       */
+/*   Updated: 2026/11/14 21:51:06 by gucakmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ void	sort_complex(t_stack **a, t_ctr *ctr);
 int		find_max_index(t_stack *a);
 int		find_pos(t_stack *a, int index);
 int	find_max_index(t_stack *a);
-int	find_pos(t_stack *a, int index)
+int	find_pos(t_stack *a, int index);
+void	sort_first_part(t_stack	**a, t_ctr *ctr);
 #endif
