@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op_reverse.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gucakmak@student.42istanbul.com.tr         +#+  +:+       +#+        */
+/*   By: sgomec <sgomec@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/03 13:10:59 by gucakmak          #+#    #+#             */
-/*   Updated: 2026/11/14 12:02:25 by gucakmak         ###   ########.fr       */
+/*   Updated: 2026/11/14 21:57:32 by sgomec           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	reverse(t_stack **stack)
 {
 	t_stack	*temp;
-	t_stack	*stack;
+	t_stack	*lst;
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
@@ -47,5 +47,5 @@ void	rrr(t_stack **a, t_stack **b, t_ctr *ctr)
 	reverse(a);
 	reverse(b);
 	write(1, "rrr\n", 4);
-	ct->rrr++;
+	ctr->rrr++;
 }
