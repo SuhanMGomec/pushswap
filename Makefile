@@ -25,6 +25,8 @@ HEADER	= push_swap.h
 
 all: $(NAME)
 
+$(OBJS): $(HEADER)
+
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
