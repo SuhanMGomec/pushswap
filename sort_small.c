@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_small.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgomec <sgomec@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sgomec <sgomec@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 14:08:21 by sgomec            #+#    #+#             */
-/*   Updated: 2026/10/17 15:04:08 by sgomec           ###   ########.fr       */
+/*   Updated: 2026/11/14 10:41:44 by sgomec           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,19 @@ static int	find_max_index(t_stack *a)
 		a = a->next;
 	}
 	return (max);
+}
+
+static int	find_pos(t_stack *a, int index)
+{
+	int	pos;
+
+	pos = 0;
+	while (a && a->index != index)
+	{
+		a = a->next;
+		pos++;
+	}
+	return (pos);
 }
 
 void	sort_2(t_stack **a)
@@ -56,12 +69,16 @@ void	sort_5(t_stack **a)
 	i = 0;
 	while (i < size - 3)
 	{
-		while ((*a)->index != i)
-			ra(a);
-		pb(a,&b);
+		if (find_pos(*a, i) <= stack_size(*a) / 2)
+			while ((*a)->index != i)
+				ra(a);
+		else
+			while ((*a)->index != i)
+				rra(a);
+		pb(a, &b);
 		i++;
 	}
 	sort_3(a);
 	while (b)
-		pa(a,&b);
+		pa(a, &b);
 }
