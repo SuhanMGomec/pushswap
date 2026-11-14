@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgomec <sgomec@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gucakmak@student.42istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/03 13:11:01 by sgomec            #+#    #+#             */
-/*   Updated: 2026/10/03 14:58:19 by sgomec           ###   ########.fr       */
+/*   Updated: 2026/11/14 11:31:32 by gucakmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	ra(t_stack **a)
 {
 	rotate(a);
 	write (1, "ra\n", 3);
+	
 }
 
 void	rb(t_stack **b)

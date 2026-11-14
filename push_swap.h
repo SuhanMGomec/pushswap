@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   push_swap.h                                       :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: gucakmak <gucakmak@student.42istanbul.com.#+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/11 20:32:23 by gucakmak         #+#    #+#              */
-/*   Updated: 2026/11/11 15:24:25 by gucakmak        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gucakmak@student.42istanbul.com.tr         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/11 20:32:23 by gucakmak          #+#    #+#             */
+/*   Updated: 2026/11/14 11:41:41 by gucakmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,20 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
+typedef struct s_counter
+{
+	int	sa;
+	int ra;
+	int	rra;
+	int	pa;
+	int	pb;
+	int	rrb;
+	int	rb;
+	int	sb;
+	int	ss;
+	int	rr;
+	int	rrr;
+}	t_ctr;
 char	**ft_split(char const *s, char sep);
 void	pb(t_stack **a, t_stack **b);
 void	pa(t_stack **a, t_stack **b);
