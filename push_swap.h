@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gucakmak@student.42istanbul.com.tr         +#+  +:+       +#+        */
+/*   By: sgomec <sgomec@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/11 20:32:23 by gucakmak          #+#    #+#             */
-/*   Updated: 2026/11/14 19:43:14 by gucakmak         ###   ########.fr       */
+/*   Updated: 2026/11/14 21:19:54 by sgomec           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,13 @@ void	free_stack(t_stack **stack);
 int		is_sorted(t_stack *stack);
 void	assign_index(t_stack *stack);
 double	disorder(t_stack *stack);
+void	sort_2(t_stack **a);
+void	sort_3(t_stack **a);
+void	sort_5(t_stack **a);
 void	sort_simple(t_stack **a, t_ctr *ctr);
 void	sort_medium(t_stack **a, t_ctr *ctr);
 void	sort_complex(t_stack **a, t_ctr *ctr);
 int		find_max_index(t_stack *a);
 int		find_pos(t_stack *a, int index);
-int	find_max_index(t_stack *a);
-int	find_pos(t_stack *a, int index)
+
 #endif
