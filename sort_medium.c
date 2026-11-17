@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_medium.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gucakmak@student.42istanbul.com.tr         +#+  +:+       +#+        */
+/*   By: gucakmak <gucakmak@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 19:39:12 by gucakmak          #+#    #+#             */
-/*   Updated: 2026/11/14 22:51:23 by gucakmak         ###   ########.fr       */
+/*   Updated: 2026/11/17 21:34:44 by gucakmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,45 +17,38 @@ static int	square_root(int n)
 	int	i;
 
 	i = 1;
-	while ((i+1)*(i+1) < n)
+	while ((i+1)*(i+1) <= n)
 		i++;
 	return (i);
 }
-
-
-void	sort_first_part(t_stack	**a, t_ctr *ctr)
+void	first_part(t_stack **a, t_stack **b, t_ctr *ctr)
 {
-	int	elements;
-	int	chunk;
-	t_stack	**b;
+	int	i;
+	int	chunks;
 
-	chunk = square_root(stack_size(*a));
-	elements = 0;
-	b = NULL;
+	i = 0;
+	chunks = square_root(stack_size(*a));
 	while (*a)
 	{
-		if ((*a)->index < chunk + elements)
+		if ((*a)->index <= chunks + i)
 		{
 			pb(a,b,ctr);
-			elements++;
+			if ((*b)->index < i)
+				rb(b,ctr);
+			i++;
 		}
 		else
-			ra(a,ctr);
+			rra(a, ctr);
 	}
 }
-
-void	sort_second_part(t_stack **a, t_stack **b, t_ctr *ctr)
+void	second_part(t_stack **a, t_stack **b, t_ctr *ctr)
 {
-	int	size;
 	int	i;
-	int elements;
 
 	i = find_max_index(*b);
-	elements = 0;
-	size = stack_size(*b);
 	while (*b)
 	{
-		if (find_pos(*b, i) <= (size - elements) / 2)
+		if (find_pos(*b,i) < stack_size(*b) / 2)
 		{
 			while ((*b)->index != i)
 				rb(b, ctr);
@@ -63,10 +56,20 @@ void	sort_second_part(t_stack **a, t_stack **b, t_ctr *ctr)
 		else
 		{
 			while ((*b)->index != i)
-			rrb(b,ctr);
+				rrb(b, ctr);
 		}
-		pa(a,b,ctr);
 		i--;
-		elements++;
+		pa(a,b, ctr);
 	}
+}
+
+void	sort_medium(t_stack **a, t_ctr *ctr)
+{
+	t_stack	*b;
+
+	b = NULL;
+	if (is_sorted(*a))
+		return ;
+	first_part(a, &b, ctr);
+	second_part(a,&b, ctr);
 }
