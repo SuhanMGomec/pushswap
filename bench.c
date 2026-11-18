@@ -3,26 +3,85 @@
 /*                                                        :::      ::::::::   */
 /*   bench.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgomec <sgomec@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: gucakmak <gucakmak@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/14 11:46:00 by gucakmak          #+#    #+#             */
-/*   Updated: 2026/11/14 21:26:51 by sgomec           ###   ########.fr       */
+/*   Created: 2026/11/14 11:46:00 by username          #+#    #+#             */
+/*   Updated: 2026/11/18 20:51:30 by gucakmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_counter(t_ctr	*ctr)
+static void	ft_putstr_fd(char *s, int fd)
 {
-	ctr->sa = 0;
-	ctr->sb = 0;
-	ctr->ss = 0;
-	ctr->ra = 0;
-	ctr->rb = 0;
-	ctr->rr = 0;
-	ctr->rra = 0;
-	ctr->rrb = 0;
-	ctr->rrr = 0;
-	ctr->pa = 0;
-	ctr->pb = 0;
+	int	i;
+
+	i = 0;
+	if (s == NULL)
+		return ;
+	while (s[i] != '\0')
+		i++;
+	write(fd, s, i);
+}
+
+static void	ft_putnbr_fd(int n, int fd)
+{
+	if (n < 10)
+	{
+		n = n % 10 + '0';
+		write(fd, &n, 1);
+	}
+	else
+	{
+		ft_putnbr_fd(n / 10, 2);
+		ft_putnbr_fd(n % 10, 2);
+	}
+}
+
+static void	print_ops(char *a, int op)
+{
+	ft_putstr_fd(a, 2);
+	ft_putnbr_fd(op, 2);
+	write(2, "  ", 2);
+}
+
+static void	print_disorder(double disorder)
+{
+	int	i;
+
+	i = disorder * 10000 + 0.5;
+	ft_putstr_fd("[bench] disorder: ", 2);
+	ft_putnbr_fd(i / 100, 2);
+	write(2, ".", 1);
+	if (i % 100 < 10)
+		write(2, "0", 1);
+	ft_putnbr_fd(i % 100, 2);
+	write(2, "%", 1);
+}
+
+void	bench(double disorder, t_ctr *ctr, char *strategy)
+{
+	int	total;
+
+	print_disorder(disorder);
+	ft_putstr_fd("\n[bench] strategy: ", 2);
+	ft_putstr_fd(strategy, 2);
+	ft_putstr_fd("\n[bench] total_ops: ", 2);
+	total = ctr->ra + ctr->rb + ctr->rr + ctr->rra + ctr->rrb + ctr->rrr
+		+ ctr->sa + ctr->sb + ctr->ss + ctr->pa + ctr->pb;
+	ft_putnbr_fd(total, 2);
+	write(2, "\n", 1);
+	print_ops("[bench] sa:  ", ctr->sa);
+	print_ops("sb:  ", ctr->sb);
+	print_ops("ss:  ", ctr->ss);
+	print_ops("pa:  ", ctr->pa);
+	print_ops("pb:  ", ctr->pb);
+	write(2, "\n", 1);
+	print_ops("[bench] ra:  ", ctr->ra);
+	print_ops("rb:  ", ctr->rb);
+	print_ops("rr:  ", ctr->rr);
+	print_ops("rra:  ", ctr->rra);
+	print_ops("rrb:  ", ctr->rrb);
+	print_ops("rrr:  ", ctr->rrr);
+	write(2, "\n", 1);
 }

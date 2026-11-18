@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gucakmak@student.42istanbul.com.tr         +#+  +:+       +#+        */
+/*   By: gucakmak <gucakmak@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/11 20:32:23 by gucakmak          #+#    #+#             */
-/*   Updated: 2026/11/14 22:56:13 by gucakmak         ###   ########.fr       */
+/*   Updated: 2026/11/18 19:35:11 by gucakmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,5 @@ void	sort_medium(t_stack **a, t_ctr *ctr);
 void	sort_complex(t_stack **a, t_ctr *ctr);
 int		find_max_index(t_stack *a);
 int		find_pos(t_stack *a, int index);
+void	bench(double disorder, t_ctr *ctr, char *strategy);
 #endif
