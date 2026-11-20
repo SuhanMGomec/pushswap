@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static	int	get_max_bits(int size)
+static int	get_max_bits(int size)
 {
 	int	max;
 	int	bits;
@@ -37,9 +37,9 @@ static void	radix_pass(t_stack **a, t_stack **b, int bit, t_ctr *ctr)
 	while (i < size)
 	{
 		if (((*a)->index >> bit) & 1)
-			ra (a, ctr);
+			ra(a, ctr);
 		else
-			pb (a, b, ctr);
+			pb(a, b, ctr);
 		i++;
 	}
 	while (*b)
@@ -56,7 +56,7 @@ void	sort_complex(t_stack **a, t_ctr *ctr)
 		return ;
 	b = NULL;
 	bit = 0;
-	max_bits = get_max_bits((stack_size(*a)));
+	max_bits = get_max_bits(stack_size(*a));
 	while (bit < max_bits)
 	{
 		radix_pass(a, &b, bit, ctr);

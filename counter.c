@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	init_counter(t_ctr	*ctr)
+void	init_counter(t_ctr *ctr)
 {
 	ctr->sa = 0;
 	ctr->sb = 0;

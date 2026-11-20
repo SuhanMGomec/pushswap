@@ -50,7 +50,7 @@ double	disorder(t_stack *stack)
 	t_stack	*lst;
 	int		inv;
 	int		n;
-	int		pairs;
+	double	pairs;
 
 	inv = 0;
 	n = 0;
@@ -69,7 +69,7 @@ double	disorder(t_stack *stack)
 	if (n < 2)
 		return (0);
 	pairs = n * (n - 1) / 2.0;
-	return ((double) inv / pairs);
+	return (inv / pairs);
 }
 
 int	find_max_index(t_stack *a)

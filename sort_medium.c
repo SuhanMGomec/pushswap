@@ -17,11 +17,12 @@ static int	square_root(int n)
 	int	i;
 
 	i = 1;
-	while ((i+1)*(i+1) <= n)
+	while ((i + 1) * (i + 1) <= n)
 		i++;
 	return (i);
 }
-void	first_part(t_stack **a, t_stack **b, t_ctr *ctr)
+
+static void	first_part(t_stack **a, t_stack **b, t_ctr *ctr)
 {
 	int	i;
 	int	chunks;
@@ -32,23 +33,24 @@ void	first_part(t_stack **a, t_stack **b, t_ctr *ctr)
 	{
 		if ((*a)->index <= chunks + i)
 		{
-			pb(a,b,ctr);
+			pb(a, b, ctr);
 			if ((*b)->index < i)
-				rb(b,ctr);
+				rb(b, ctr);
 			i++;
 		}
 		else
 			rra(a, ctr);
 	}
 }
-void	second_part(t_stack **a, t_stack **b, t_ctr *ctr)
+
+static void	second_part(t_stack **a, t_stack **b, t_ctr *ctr)
 {
 	int	i;
 
 	i = find_max_index(*b);
 	while (*b)
 	{
-		if (find_pos(*b,i) < stack_size(*b) / 2)
+		if (find_pos(*b, i) <stack_size(*b) / 2)
 		{
 			while ((*b)->index != i)
 				rb(b, ctr);
@@ -59,7 +61,7 @@ void	second_part(t_stack **a, t_stack **b, t_ctr *ctr)
 				rrb(b, ctr);
 		}
 		i--;
-		pa(a,b, ctr);
+		pa(a, b, ctr);
 	}
 }
 
@@ -71,5 +73,5 @@ void	sort_medium(t_stack **a, t_ctr *ctr)
 	if (is_sorted(*a))
 		return ;
 	first_part(a, &b, ctr);
-	second_part(a,&b, ctr);
+	second_part(a, &b, ctr);
 }
