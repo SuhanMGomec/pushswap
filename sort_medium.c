@@ -50,7 +50,7 @@ static void	second_part(t_stack **a, t_stack **b, t_ctr *ctr)
 	i = find_max_index(*b);
 	while (*b)
 	{
-		if (find_pos(*b, i) <stack_size(*b) / 2)
+		if (find_pos(*b, i) < stack_size(*b) / 2)
 		{
 			while ((*b)->index != i)
 				rb(b, ctr);

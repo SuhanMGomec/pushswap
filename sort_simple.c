@@ -50,7 +50,7 @@ static void	sort_more_4(t_stack **a, t_ctr *ctr)
 		else
 		{
 			while ((*a)->index != i)
-			rra(a, ctr);
+				rra(a, ctr);
 		}
 		pb(a, &b, ctr);
 		i++;
