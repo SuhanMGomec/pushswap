@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gucakmak <gucakmak@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: sgomec <sgomec@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/11 20:32:23 by gucakmak          #+#    #+#             */
-/*   Updated: 2026/11/18 19:35:11 by gucakmak         ###   ########.fr       */
+/*   Created: 2026/11/20 16:54:00 by sgomec            #+#    #+#             */
+/*   Updated: 2026/11/20 16:54:02 by sgomec           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_medium.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gucakmak <gucakmak@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: sgomec <sgomec@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/14 19:39:12 by gucakmak          #+#    #+#             */
-/*   Updated: 2026/11/18 20:10:30 by gucakmak         ###   ########.fr       */
+/*   Created: 2026/11/20 16:54:04 by sgomec            #+#    #+#             */
+/*   Updated: 2026/11/20 16:54:05 by sgomec           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
